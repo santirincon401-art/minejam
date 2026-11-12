@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d2ix1xwhlw4qm"]
+
+[ext_resource type="Script" uid="uid://crn7esghlcqb6" path="res://prueba_generacion_procedural.gd" id="1_bd3w6"]
+
+[node name="prueba generacion procedural" type="Node3D" unique_id=1521667807]
+script = ExtResource("1_bd3w6")

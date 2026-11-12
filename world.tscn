@@ -1,14 +1,6 @@
 [gd_scene format=3 uid="uid://nm31aa80pbad"]
 
-[ext_resource type="PackedScene" uid="uid://buxr44ik52hrw" path="res://voxels/voxel_1.tscn" id="1_f3sb7"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h4t55"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_8w0r3"]
-size = Vector3(20, 1, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_8w0r3"]
-size = Vector3(20, 1, 20)
+[ext_resource type="Script" uid="uid://vlerydnaylnw" path="res://generator.gd" id="1_f3sb7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w7mgy"]
 
@@ -21,18 +13,8 @@ sky = SubResource("Sky_h4t55")
 
 [node name="world" type="Node3D" unique_id=1720396603]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=774510826]
-physics_material_override = SubResource("PhysicsMaterial_h4t55")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=702152583]
-mesh = SubResource("BoxMesh_8w0r3")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=725703984]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15161133, 0)
-shape = SubResource("BoxShape3D_8w0r3")
-
-[node name="voxel1" parent="." unique_id=1617060078 instance=ExtResource("1_f3sb7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.452573, 0.8483882, -2.412142)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1091546005]
 environment = SubResource("Environment_8w0r3")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=797645803]
+script = ExtResource("1_f3sb7")

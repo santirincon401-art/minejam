@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://87bej0b10rvo"]
 
 [ext_resource type="PackedScene" uid="uid://nm31aa80pbad" path="res://world.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://vlerydnaylnw" path="res://generator.gd" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://87r1wmic637k" path="res://player/player.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://buxr44ik52hrw" path="res://voxels/voxel_1.tscn" id="2_lquwl"]
 
-[node name="Node3D" type="Node3D" unique_id=1209658938]
+[node name="Node3D" type="Node3D" unique_id=1209658938 node_paths=PackedStringArray("player")]
+script = ExtResource("1_1bvp3")
+bloque = ExtResource("2_lquwl")
+player = NodePath("Player")
 
 [node name="world" parent="." unique_id=1720396603 instance=ExtResource("1_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.671708, -0.49258423, 0.3026209)
