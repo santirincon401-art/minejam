@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bueataal5ca1r"]
+
+[ext_resource type="Script" uid="uid://cw3xlqkid75d0" path="res://mesh_instance_3d.gd" id="1_kdh3y"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8w0r3"]
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1846092008]
+script = ExtResource("1_kdh3y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=593698707]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1315876948]
+mesh = SubResource("ArrayMesh_8w0r3")

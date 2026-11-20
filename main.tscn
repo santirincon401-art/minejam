@@ -1,17 +1,27 @@
 [gd_scene format=3 uid="uid://87bej0b10rvo"]
 
-[ext_resource type="PackedScene" uid="uid://nm31aa80pbad" path="res://world.tscn" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://vlerydnaylnw" path="res://generator.gd" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://cb2im1rswo6pl" path="res://world.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://87r1wmic637k" path="res://player/player.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://buxr44ik52hrw" path="res://voxels/voxel_1.tscn" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bueataal5ca1r" path="res://chunk.tscn" id="3_h2yge"]
 
-[node name="Node3D" type="Node3D" unique_id=1209658938 node_paths=PackedStringArray("player")]
-script = ExtResource("1_1bvp3")
-bloque = ExtResource("2_lquwl")
-player = NodePath("Player")
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
 
-[node name="world" parent="." unique_id=1720396603 instance=ExtResource("1_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.671708, -0.49258423, 0.3026209)
+[sub_resource type="Sky" id="Sky_h4t55"]
+sky_material = SubResource("ProceduralSkyMaterial_0xm2m")
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_h4t55")
+
+[node name="world" type="Node3D" unique_id=1209658938 node_paths=PackedStringArray("jugador")]
+script = ExtResource("1_h2yge")
+escena_chunk = ExtResource("3_h2yge")
+jugador = NodePath("Player")
 
 [node name="Player" parent="." unique_id=2043259858 instance=ExtResource("2_h2yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3629417, 3.0102975, -5.5461464)
+
+[node name="StaticBody3D" parent="." unique_id=1846092008 instance=ExtResource("3_h2yge")]
+
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="." unique_id=1353063596]
+environment = SubResource("Environment_h2yge")

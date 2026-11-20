@@ -1,20 +1,5 @@
 [gd_scene format=3 uid="uid://nm31aa80pbad"]
 
-[ext_resource type="Script" uid="uid://vlerydnaylnw" path="res://generator.gd" id="1_f3sb7"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w7mgy"]
-
-[sub_resource type="Sky" id="Sky_h4t55"]
-sky_material = SubResource("ProceduralSkyMaterial_w7mgy")
-
-[sub_resource type="Environment" id="Environment_8w0r3"]
-background_mode = 2
-sky = SubResource("Sky_h4t55")
-
 [node name="world" type="Node3D" unique_id=1720396603]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1091546005]
-environment = SubResource("Environment_8w0r3")
-
 [node name="Node3D" type="Node3D" parent="." unique_id=797645803]
-script = ExtResource("1_f3sb7")
